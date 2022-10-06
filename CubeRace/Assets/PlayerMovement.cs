@@ -14,6 +14,10 @@ public class PlayerMovement : MonoBehaviour
     public float sidewaysForce = 500f;
 
 
+    //-----------------//
+    // Update Function //
+    //-----------------//
+
     // Using Fixed update because we are using the Unity Physics system!
     void FixedUpdate() 
     {
