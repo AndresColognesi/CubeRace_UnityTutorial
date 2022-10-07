@@ -10,8 +10,8 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody rb;
 
     // Tunable physics parameters:
-    public float forwardForce = 2000f;
-    public float sidewaysForce = 500f;
+    public float forwardForce = 2500f;
+    public float sidewaysForce = 2f;
 
 
     //-----------------//
@@ -27,12 +27,14 @@ public class PlayerMovement : MonoBehaviour
         // Player movement triggered by user input:
         if (Input.GetKey("d"))
         {
-            rb.AddForce(sidewaysForce + Time.deltaTime, 0, 0);
+            // Add a lateral force that disconsideres object mass (dynamic system of order 1):
+            rb.AddForce(sidewaysForce + Time.deltaTime, 0, 0, ForceMode.VelocityChange);
         }
 
         else if (Input.GetKey("a"))
         {
-            rb.AddForce(-sidewaysForce + Time.deltaTime, 0, 0);
+            // Add a lateral force that disconsideres object mass (dynamic system of order 1):
+            rb.AddForce(-sidewaysForce + Time.deltaTime, 0, 0, ForceMode.VelocityChange);
         }
     }
 }
