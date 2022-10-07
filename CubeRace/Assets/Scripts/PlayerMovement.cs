@@ -10,8 +10,8 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody rb;
 
     // Tunable physics parameters:
-    public float forwardForce = 2500f;
-    public float sidewaysForce = 2f;
+    public float forwardForce = 3500f;
+    public float sidewaysForce = 1f;
 
 
     //-----------------//
