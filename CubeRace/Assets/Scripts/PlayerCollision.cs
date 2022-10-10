@@ -20,6 +20,8 @@ public class PlayerCollision : MonoBehaviour
         {
             // Disable player movement script:
             movement.enabled = false;
+            // Run GameOver function from GameManager object after colliding:
+            FindObjectOfType<GameManager>().GameOver();
         }
     }
 }

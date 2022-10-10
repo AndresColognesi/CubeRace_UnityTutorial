@@ -36,5 +36,12 @@ public class PlayerMovement : MonoBehaviour
             // Add a lateral force that disconsideres object mass (dynamic system of order 1):
             rb.AddForce(-sidewaysForce + Time.deltaTime, 0, 0, ForceMode.VelocityChange);
         }
+
+        // Handle end of game if player drops the platform:
+        if (rb.position.y < -1f)
+        {
+            // Call GameOver method from Game Manager object:
+            FindObjectOfType<GameManager>().GameOver();
+        }
     }
 }
