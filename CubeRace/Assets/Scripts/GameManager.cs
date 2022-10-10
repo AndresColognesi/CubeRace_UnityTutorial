@@ -3,6 +3,15 @@ using UnityEngine.SceneManagement; //to operate on the scenes
 
 public class GameManager : MonoBehaviour
 {
+    //--------------------------------------------------//
+    // Public parameters to be populated on the console //
+    //--------------------------------------------------//
+
+    // Referencing the complete level panel:
+    public GameObject completeLevelUI;
+
+
+
     //--------------------//
     // Private Attributes //
     //--------------------//
@@ -15,6 +24,17 @@ public class GameManager : MonoBehaviour
     //------------------//
     // Custom Functions //
     //------------------//
+
+    public void CompleteLevel()
+    {
+        completeLevelUI.SetActive(true);
+    }
+
+
+    void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
 
     public void GameOver()
     {
@@ -29,8 +49,4 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void Restart()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
 }
